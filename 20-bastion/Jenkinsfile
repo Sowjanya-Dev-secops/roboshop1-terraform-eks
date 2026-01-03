@@ -28,7 +28,7 @@ pipeline {
                 script{
                     withAWS(region:'us-east-1',credentials:'aws-creds') {
                         sh """
-                            cd 30-sg-rule
+                            cd 20-bastion
                             terraform init
                         """
                     }
@@ -40,7 +40,7 @@ pipeline {
                 script{
                     withAWS(region:'us-east-1',credentials:'aws-creds') {
                         sh """
-                            cd 30-sg-rule
+                            cd 20-bastion
                             terraform plan
                         """
                     }
@@ -53,7 +53,7 @@ pipeline {
                 script{
                     withAWS(region:'us-east-1',credentials:'aws-creds') {
                         sh """
-                            cd 30-sg-rule
+                            cd 20-bastion
                             terraform apply -auto-approve
                         """
                     }
