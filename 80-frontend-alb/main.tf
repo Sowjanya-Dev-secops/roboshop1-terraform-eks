@@ -31,7 +31,7 @@ resource "aws_lb_listener" "ingress_alb" {
   }
 }
 
-resource "aws_route53_record" "frontend_alb" {
+resource "aws_route53_record" "ingress_alb" {
   zone_id = var.zone_id
   name    = "*.${var.domain_name}"
   type    = "A"
